@@ -66,11 +66,17 @@ Increased costs to keep the project alive
 
 Many years of work risked to fade into oblivion
 
-## Nikola is not happy here
+## Nikola is not happy
 
-# There must be a better way!
+![Nikola is not happy](images/funny/tesla-facepalm.png)
 
-## Richie & Tompson here
+# This can't be...
+
+There must be a better way!
+
+## Back to the masters
+
+![Ritchie and Thompson](images/ritchie-and-thompson.jpg)
 
 # The Unix Philosophy
 
@@ -135,7 +141,9 @@ A simple program will be easier to readapt to new requirements
 
 Being easier to use, understand, read and maintain, it will be readapted to work in different contexts and will attract more contributors
 
-# Me gusta here
+# Me gusta
+
+![me gusta](images/funny/me_gusta_with_text.svg)
 
 # The Unix Philosophy in detail
 
@@ -253,9 +261,11 @@ Design for the future, because it will be here sooner than you think
 
 [source](http://www.catb.org/esr/writings/taoup/html/ch01s06.html#id2879112)
 
-# Robba seria here
+# Approved
 
-# How to apply it to Django development?
+![Abrahm approves](images/funny/abrahm-approves.png)
+
+# How to apply it to Django?
 
 How to apply the Unix philosophy to [django](https://www.djangoproject.com/) projects?
 
@@ -617,13 +627,17 @@ OpenWISP has been accepted as a mentoring organization
 
 for the [Google Summer of Code 2017](https://summerofcode.withgoogle.com/organizations/5694014226432000/)
 
-# Faccina felice here
+# Yay!
+
+![Happy](images/funny/happy-kid.svg)
 
 # Disadvantages
 
 **Is not a bed of roses**
 
-# Meme simpatico here
+# Doh
+
+![Rage](images/funny/rage_guy.svg)
 
 ## 1. Integration issues
 
@@ -697,8 +711,6 @@ We no longer have a single popular repository with many github stars
 
 Github stars are not an accurate indicator of the success of a project
 
-# meme simpatico here
-
 # Conclusions
 
 The creators of Unix are not newcomers
@@ -734,7 +746,9 @@ Read the code of OpenWISP
 
 (or other projects like [@openstack](https://github.com/openstack))
 
-# like a boss here
+# Upgrade to sir dev now!
+
+![like a sir](images/funny/like_a_sir.svg)
 
 # Thank you
 

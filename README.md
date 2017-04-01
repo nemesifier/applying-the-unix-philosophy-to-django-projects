@@ -14,7 +14,7 @@ Working on [public wifi](http://openwifi.cineca.it/) at [Cineca](https://www.cin
 
 ## OpenWISP
 
-![OpenWISP](images/openwisp.svg)
+![OpenWISP](http://netjsonconfig.openwisp.org/en/latest/_images/openwisp.org.svg)
 
 ## What is OpenWISP?
 

@@ -1,4 +1,4 @@
-MARKDOWN=README.md
+MARKDOWN=slides.md
 TEMPLATE=template.odp
 OUTPUT=slides.odp
 HIGHLIGHT_STYLE=colorful

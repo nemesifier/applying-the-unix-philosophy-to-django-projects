@@ -8,5 +8,3 @@ all:
 	        --break-master=break \
 	        --content-master=content \
 	        $(MARKDOWN) $(TEMPLATE) $(OUTPUT)
-
-#Fira Sans Heavy

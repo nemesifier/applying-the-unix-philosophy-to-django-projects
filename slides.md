@@ -44,6 +44,8 @@ These problems caused several very negative consequences
 
 ## 1. "Giant ball of mud" problems
 
+Many features in a single codebase
+
 Hard to add new features in a clean way
 
 Hard to maintain over time (eg: upgrade dependencies, fix bugs)
@@ -52,7 +54,9 @@ Hard to maintain over time (eg: upgrade dependencies, fix bugs)
 
 Hard to extend without changing the core
 
-Hard to reuse in different contexts with different requirements
+Hard to adapt it and reuse it in different contexts
+
+Single features of the codebase not easily reusable
 
 ## 3. Little or no contributions
 
@@ -65,6 +69,14 @@ We only got low quality patches which were never merged
 Increased costs to keep the project alive
 
 Many years of work risked to fade into oblivion
+
+## 5. Duplication of efforts
+
+Little reusability means:
+
+**reinventing the wheel**
+
+**no ecosystem of interoperable tools**
 
 ## Nikola is not happy
 
@@ -123,7 +135,7 @@ Solving one problem at time is simpler
 
 ## 2. Maintainability
 
-Maintain a simple program is less hard
+Maintaining a simple program is less expensive
 
 ## 3. Usability
 
@@ -139,7 +151,17 @@ A simple program will be easier to readapt to new requirements
 
 ## 6. Reuse
 
-Being easier to use, understand, read and maintain, it will be readapted to work in different contexts and will attract more contributors
+Being easier to use, understand, read and maintain
+
+it will be readapted to work in different contexts and will attract more contributors
+
+## 7. Ecosystem
+
+Many such programs form an ecosystem of interoperable tools
+
+(like basic lego building blocks)
+
+**solve complex problems faster**
 
 # Me gusta
 
@@ -277,7 +299,7 @@ Develop main features as [reusable django apps](https://docs.djangoproject.com/e
 
 One django app for each group of related features
 
-Document your app properly
+Document its public API
 
 Include a [license](https://choosealicense.com/) and a [changelog](http://keepachangelog.com/)
 
@@ -308,12 +330,17 @@ Combine, extend and customize django reusable apps in your final django project
 
 Final result handled by [ansible-openwisp2](https://github.com/openwisp/ansible-openwisp2) in an (almost) transparent manner
 
+# 3. OpenWISP 2 Diagram
+
+![openwisp2-modules-diagram](images/openwisp2-modules.svg)
+
 ## 4. Rule of Separation
 
-- implement complex algorithms as libraries
-- make these libraries highly configurable
-- make these libraries a dependency of your project
+- implement mechanisms as libraries
 - implement policy as a configuration
+- make these libraries highly configurable
+- make these libraries work with data
+- clearly define input and output
 
 ## 4. Real world examples
 
@@ -321,9 +348,21 @@ Final result handled by [ansible-openwisp2](https://github.com/openwisp/ansible-
 
 [django-netjsonconfig](https://github.com/openwisp/django-netjsonconfig): web interface to netjsonconfig
 
-## 4. Real world examples
+## 4. netjsonconfig
 
-Screenshot of advanced mode
+```python
+>>> from netjsonconfig import OpenWrt
+>>> router = OpenWrt({
+...     "general": {"hostname": "HomeRouter"}
+... })
+>>> print(router.render())
+package system
+
+config system 'system'
+        option hostname 'HomeRouter'
+        option timezone 'UTC'
+        option zonename 'UTC'
+```
 
 ## 5. Rule of Simplicity
 
@@ -339,6 +378,8 @@ as of March 2017:
 - 25 releases of [django-netjsonconfig](https://github.com/openwisp/django-netjsonconfig)
 - 5 releases of [django-x509](https://github.com/openwisp/django-x509)
 
+OpenWISP 2 still lacks some features of OpenWISP 1
+
 ## 6. Rule of Parsimony
 
 Prefer creating new reusable apps when adding big features
@@ -353,7 +394,7 @@ VPN configurations added to existing app: [django-netjsonconfig](https://github.
 
 ## 7. Rule of Transparency
 
-Log weird events using the python logging facility
+Log unexpected events using the python logging facility
 
 ## 7. Real world examples
 
@@ -380,7 +421,7 @@ Provide support for [sentry](https://sentry.io)
 
 Add constraints to your reusable django apps only when necessary:
 
-- avoid strict validation rules
+- avoid very strict validation rules
 - provide configurable settings
 
 ## 8. Real world examples
@@ -390,7 +431,11 @@ Add constraints to your reusable django apps only when necessary:
 
 ## 9. Rule of Representation
 
-Fold complex information in data structures stored in text fields
+Fold complex information in data structures
+
+Process these data structures with algorithms
+
+Try to make algorithms framework-agnostic (if possible)
 
 ## 9. Real world examples
 
@@ -401,17 +446,24 @@ in [OpenWISP 2](https://github.com/openwisp/ansible-openwisp2), configuration of
 ## 9. Real world example
 
 ```python
->>> from netjsonconfig import OpenWrt
->>> router = OpenWrt({
-...     "general": {"hostname": "HomeRouter"}
-... })
->>> print(router.render())
-package system
-
-config system 'system'
-        option hostname 'HomeRouter'
-        option timezone 'UTC'
-        option zonename 'UTC'
+# NetJSON DeviceConfiguration example
+{
+    "general": {"hostname": "HomeRouter"},
+    "interfaces": [
+        {
+            "name": "eth0",
+            "type": "ethernet",
+            "addresses": [
+                {
+                    "address": "192.168.1.1",
+                    "mask": 24,
+                    "proto": "static",
+                    "family": "ipv4"
+                }
+            ]
+        }
+    ]
+}
 ```
 
 ## 9. NetJSON configuration
@@ -572,7 +624,8 @@ urlpatterns = get_controller_urls(views)
 
 ## 17. Extensibility: AppConfig
 
-If your reusable django app relies on signal connection for some features, provide a default `AppConfig` class
+If your reusable django app relies on signal connection for some features,
+provide a default `AppConfig` class
 
 ## 17. Extensibility: AppConfig
 
@@ -627,7 +680,7 @@ OpenWISP has been accepted as a mentoring organization
 
 for the [Google Summer of Code 2017](https://summerofcode.withgoogle.com/organizations/5694014226432000/)
 
-# Yay!
+## Yay!
 
 ![Happy](images/funny/happy-kid.svg)
 
@@ -635,7 +688,7 @@ for the [Google Summer of Code 2017](https://summerofcode.withgoogle.com/organiz
 
 **Is not a bed of roses**
 
-# Doh
+## Doh
 
 ![Rage](images/funny/rage_guy.svg)
 
@@ -717,7 +770,7 @@ The creators of Unix are not newcomers
 
 Following their heritage is a good idea
 
-# Delve deep
+## Delve deep
 
 Further resources on the Unix Philosophy and related concepts:
 
@@ -746,11 +799,15 @@ Read the code of OpenWISP
 
 (or other projects like [@openstack](https://github.com/openstack))
 
-# Upgrade to sir dev now!
+## Unix Philosophy for the win!
 
 ![like a sir](images/funny/like_a_sir.svg)
 
 # Thank you
+
+Ideas, critical feedback, suggestions?
+
+Talk to me!
 
 Find me also on:
 

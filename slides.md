@@ -147,7 +147,7 @@ A simple program is easier to read and understand
 
 ## 5. Agility
 
-A simple program will be easier to readapt to new requirements
+A simple program will be more easily readapted to new requirements
 
 ## 6. Reuse
 
@@ -161,7 +161,9 @@ Many such programs form an ecosystem of interoperable tools
 
 (like basic lego building blocks)
 
-**solve complex problems faster**
+and
+
+**allow to solve complex problems faster**
 
 # Me gusta
 
@@ -346,7 +348,8 @@ Final result handled by [ansible-openwisp2](https://github.com/openwisp/ansible-
 
 [netjsonconfig](https://github.com/openwisp/netjsonconfig): python library for generating router & VPN configurations from [NetJSON](http://netjson.org/) objects
 
-[django-netjsonconfig](https://github.com/openwisp/django-netjsonconfig): web interface to netjsonconfig
+[django-netjsonconfig](https://github.com/openwisp/django-netjsonconfig): web interface
+that uses netjsonconfig under the hood
 
 ## 4. netjsonconfig
 
@@ -372,7 +375,7 @@ config system 'system'
 
 ## 5. Real world examples
 
-as of March 2017:
+as of April 2017:
 
 - 24 releases of [netjsonconfig](https://github.com/openwisp/netjsonconfig)
 - 25 releases of [django-netjsonconfig](https://github.com/openwisp/django-netjsonconfig)
@@ -546,9 +549,7 @@ If you need glue code, write generators
 
 Maintain a skeptic attitude towards dogmas and fads
 
-Measure before optimizing
-
-Prototype before investing time in radical ideas
+Measure the effectiveness of an approach before embracing it
 
 ## 17. Rule of Extensibility
 
@@ -625,7 +626,7 @@ urlpatterns = get_controller_urls(views)
 ## 17. Extensibility: AppConfig
 
 If your reusable django app relies on signal connection for some features,
-provide a default `AppConfig` class
+provide a base `AppConfig` class
 
 ## 17. Extensibility: AppConfig
 
@@ -814,3 +815,6 @@ Find me also on:
 - [twitter (@nemesisdesign)](https://twitter.com/nemesisdesign)
 - [github (@nemesisdesign)](https://github.com/nemesisdesign)
 - [linkedin (Federico Capoano)](https://www.linkedin.com/in/federicocapoano/)
+
+You can find these slides on
+[slideshare](https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world)

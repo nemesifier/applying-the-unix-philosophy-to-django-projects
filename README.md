@@ -4,7 +4,7 @@ A report from the real world.
 
 ## Slideshare
 
-Coming soon.
+[Slides are available on slideshare](https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world).
 
 ## Video
 
